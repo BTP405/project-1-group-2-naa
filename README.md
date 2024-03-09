@@ -3,29 +3,48 @@
 ### Please use the following template to add a ReadMe for your repo.
 
 ## 1. Project Title and Description
-    - Title: Provide a clear and concise title for your project.
-    - Description: Give a brief overview of what your project does and its purpose.
+    - Title: This is the Musify, it replicates many music app projects
+    - Description: For the Backend, we have collected datas from PostgresSQL and then pushed into Supabase, which is the online database that we can access to the Front-end like Mongoose or MongoDB Atlas. Our Frontend is declared with Django(Using Python as URL, API and render logic, while HTML for website sheet)
 ## 2. Installation
-    - Dependencies: List any dependencies or prerequisites required to use your project.
+    - Dependencies: Download supabase_py, django extension, and jd_database_url
     - Installation Instructions: Provide step-by-step instructions on how to install and set up your project.
 ## 3. Usage
-    - Examples: Include examples or code snippets to demonstrate how to use your project.
-    - Configuration: Explain any configuration options or settings users might need to know about.
+    - Examples: 
+        1. Start by downloading Django and Supabase_py newest version
+        2. Run the server by "python3 manage.py runserver"
 ## 4. Features
-    - List of Features: Outline the main features and functionalities of your project.
+    1. Fetch_supabase_data (Frontend)
+    2. Insert_data_to_supabase (Backend)
+    3. Sorting Wrapper Function
+    4. Get Data by selecting Table 
+    5. Declare Testing Function
 ## 5. Contributing
-    - Guidelines: Explain how others can contribute to your project, including information on submitting bug reports, feature requests, or code contributions.
-    - Code Style: If applicable, provide guidelines or references to your code style.
+    - We want to implement your favorite Album, Artist or Song. 
+    _ Click on Backend and then you can add your newest data that you want to upload
+    
+    ```ruby
+    def insert_artist(artistid, name, artistimg, followers):
+    data = {
+        "artistid": int(artistid),
+        "name": name,
+        "artistimg": artistimg, 
+        "followers": int(followers)
+    }
+    response = supabase.table("artist").insert(data).execute()  
+
+    if 'status' in response and response['status'] in [200, 201]:
+        print('Artist successfully added:', response)
+    else:
+        print('Failed to add artist. Error:', response)
+    ```
+        
 ## 6. Credits
-    - Authors: List the authors or contributors of the project.
-    - Acknowledgments: Mention any individuals or resources that helped inspire or support your project.
+    ### Project Leader, Full Stack Developer: Cris Huynh
+    ### Assistant Leader, Backend Developer: Sukhman Hara
 ## 7. License
-    - License Information: Specify the license under which your project is distributed.
+    - This is Musify project, don't disclaim 
 ## 8. Additional Sections (Optional)
-    - FAQ: Include frequently asked questions and their answers.
-    - Troubleshooting: Provide solutions to common issues or troubleshooting tips.
-    - Roadmap: Outline the future development plans for your project.
-    - Changelog: Document changes and updates to your project over time.
+    - N/A
 
 ## Markdown Formatting Tips
   - Use headings (#, ##, ###, etc.) to structure your document.
