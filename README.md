@@ -4,7 +4,7 @@
     - Title: This is the Musify, it replicates many music app projects
     - Description: For the Backend, we have collected datas from PostgresSQL and then pushed into Supabase, which is the online database that we can access to the Front-end like Mongoose or MongoDB Atlas. Our Frontend is declared with Django(Using Python as URL, API and render logic, while HTML for website sheet)
 ## 2. Installation
-    - Dependencies: Download supabase_py, django extension, and jd_database_url
+    - Dependencies: Download supabase_py, django extension, and dj_database_url
     - Installation Instructions: Provide step-by-step instructions on how to install and set up your project.
 ## 3. Usage
     - Examples: 
