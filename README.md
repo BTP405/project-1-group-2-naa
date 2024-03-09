@@ -8,7 +8,7 @@
     - Installation Instructions: Provide step-by-step instructions on how to install and set up your project.
 ## 3. Usage
     - Examples: 
-        1. Start by downloading Django and Supabase_py newest version
+        1. Start by downloading Django and Supabase_py newest version by using pip install
         2. Go to Musify-Frontend by using cd .. Musify-Fronted
         3. Run the server by "python3 manage.py runserver"
 ## 4. Features
