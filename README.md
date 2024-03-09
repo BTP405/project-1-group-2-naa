@@ -9,7 +9,8 @@
 ## 3. Usage
     - Examples: 
         1. Start by downloading Django and Supabase_py newest version
-        2. Run the server by "python3 manage.py runserver"
+        2. Go to Musify-Frontend by using cd .. Musify-Fronted
+        3. Run the server by "python3 manage.py runserver"
 ## 4. Features
     1. Fetch_supabase_data (Frontend - Fetching the data and then print into HTML by using Python syntaxes)
     2. Insert_data_to_supabase (Backend - Inserting the data and Supabase will automatically receive newest data)
