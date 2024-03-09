@@ -13,11 +13,11 @@
         1. Start by downloading Django and Supabase_py newest version
         2. Run the server by "python3 manage.py runserver"
 ## 4. Features
-    1. Fetch_supabase_data (Frontend)
-    2. Insert_data_to_supabase (Backend)
-    3. Sorting Wrapper Function
-    4. Get Data by selecting Table 
-    5. Declare Testing Function
+    1. Fetch_supabase_data (Frontend - Fetching the data and then print into HTML by using Python syntaxes)
+    2. Insert_data_to_supabase (Backend - Inserting the data and Supabase will automatically receive newest data)
+    3. Sorting Wrapper Function (To sort the newest album for each Artist)
+    4. Get Data by selecting Table (To get all data from Django Python File)
+    5. Declare Testing Function (To make sure all the HTML and Python file can run correctly)
 ## 5. Contributing
     - We want to implement your favorite Album, Artist or Song. 
     _ Click on Backend and then you can add your newest data that you want to upload
