@@ -22,7 +22,7 @@
     - We want to implement your favorite Album, Artist or Song. 
     _ Click on Backend and then you can add your newest data that you want to upload
     
-    ```ruby
+
     def insert_artist(artistid, name, artistimg, followers):
     data = {
         "artistid": int(artistid),
@@ -36,11 +36,11 @@
         print('Artist successfully added:', response)
     else:
         print('Failed to add artist. Error:', response)
-    ```
+
         
 ## 6. Credits
-    ### Project Leader, Full Stack Developer: Cris Huynh
-    ### Assistant Leader, Backend Developer: Sukhman Hara
+    - Project Leader, Full Stack Developer: Cris Huynh
+    - Assistant Leader, Backend Developer: Sukhman Hara
 ## 7. License
     - This is Musify project, don't disclaim 
 ## 8. Additional Sections (Optional)
