@@ -1,7 +1,5 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/545oUMxH)
 
-### Please use the following template to add a ReadMe for your repo.
-
 ## 1. Project Title and Description
     - Title: This is the Musify, it replicates many music app projects
     - Description: For the Backend, we have collected datas from PostgresSQL and then pushed into Supabase, which is the online database that we can access to the Front-end like Mongoose or MongoDB Atlas. Our Frontend is declared with Django(Using Python as URL, API and render logic, while HTML for website sheet)
@@ -22,7 +20,7 @@
     - We want to implement your favorite Album, Artist or Song. 
     _ Click on Backend and then you can add your newest data that you want to upload
     
-
+    ```
     def insert_artist(artistid, name, artistimg, followers):
     data = {
         "artistid": int(artistid),
@@ -36,7 +34,7 @@
         print('Artist successfully added:', response)
     else:
         print('Failed to add artist. Error:', response)
-
+    ```
         
 ## 6. Credits
     - Project Leader, Full Stack Developer: Cris Huynh
