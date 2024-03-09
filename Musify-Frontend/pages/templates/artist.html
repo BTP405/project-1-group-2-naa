@@ -1,0 +1,69 @@
+{% extends "base.html" %} {% block content %}{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{data.artist.name}}</title>
+  </head>
+  <body>
+    <style>
+      .album {
+        margin-left: 50px;
+      }
+      .c2 {
+        border: solid 1px;
+        padding: 20px;
+      }
+      .card1:hover {
+        background-color: rgb(93, 80, 178);
+        opacity: 89%;
+        transition-delay: 50ms;
+        transition-duration: 300ms;
+      }
+      .cont {
+        padding: 30px;
+      }
+    </style>
+    <br />
+    <br />
+
+    <!-- Artist Desc -->
+    <div class="cont">
+      <div class="card mb-3">
+        <img src="{{ data.artist.artistimg }}" class="card-img-top" alt="" />
+        <div class="card-body">
+          <h1 class="card-title">{{ data.artist.name }}</h1>
+          <p class="card-text" style="font-size: 22px">
+            <small class="text-body-secondary">{{album_count }} Albums</small>
+          </p>
+        </div>
+      </div>
+      <br />
+      <br />
+      <!-- Artist Albums -->
+      <div class="album row row-cols-1 row-cols-md-3 g-4">
+        {% for album in data.albums%}
+        <div class="col">
+          <div class="card card1" style="width: 18rem">
+            <img src="{{album.albumimg}}" class="card-img-top" alt="" />
+            <div class="card-body c2">
+              <h5 class="card-title">{{album.albumtitle}}</h5>
+              <p class="card-text">{{album.date}} &nbsp; | &nbsp; Album</p>
+              <a
+                href="{% url 'album' artistid=data.artist.artistid albumid=album.albumid %}"
+                class="btn btn-outline-success"
+                >Play</a
+              >
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <br />
+      <br />
+      <hr />
+    </div>
+  </body>
+</html>
+{% endblock content %}

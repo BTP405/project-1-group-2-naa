@@ -1,0 +1,81 @@
+{% extends "base.html" %} {% block content %}{% load static %}{% load utils%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Album</title>
+  </head>
+  <body>
+    <style>
+      .card-body{
+        padding: 20px;
+        margin-top: 20px;
+      }
+      .card-title{
+        padding-bottom: 12px;
+      }
+      table
+      {
+        font-size: 25px;
+      }
+      .container{
+        padding: 20px;
+      }
+    </style>
+    <br />
+    <br />
+    <div class="container">
+    <!-- Artist Desc -->
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <img
+                    src="{{data.album.albumimg}}"
+                    class="card"
+                    alt=""
+                    style="width: full;"
+                />
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card-body">
+                <h1 class="card-title">{{data.album.albumtitle}}</h1>
+                <h5 class="card-title">{{data.artist_name}}</h5>
+                <p class="card-text" style="font-size: 28px;"><small class="text-body-secondary">{{data.album.date}}</small></p>
+                <p class="card-text" style="font-size: 20px;"><small class="text-body-secondary">{{song_count}} songs </small></p>
+            </div>
+        </div>
+    </div>
+
+    <br />
+    <br />
+    <!-- Artist Albums -->
+    <table class="table table-hover">
+        <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Artist</th>
+              <th scope="col">Duration</th>
+            </tr>
+          </thead>
+        <tbody>
+        {% for song in data.songs %}
+            <tr>
+              <th scope="row">{{ forloop.counter }}</th>
+                <td>{{song.title}}</td>
+                <td>{{data.artist_name}}</td>
+                <td>{{ song.duration|convert_duration }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    <br />
+    <br />
+    <hr />
+    </div>
+  </body>
+</html>
+{% endblock content %}

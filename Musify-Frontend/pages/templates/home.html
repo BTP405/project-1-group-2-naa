@@ -1,0 +1,52 @@
+{% extends "base.html" %} {% block content %}{% load static %}{% load utils%}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'pages/css/style.css' %}" />
+  </head>
+  <body>
+    <style>
+      .row {
+        padding-left: 80px;
+        margin-top: 20px;
+      }
+
+      @media screen and (max-width: 768px) {
+        .row {
+          display: flex;
+          flex-wrap: wrap;
+        }
+      }
+    </style>
+
+    <!-- Main Card -->
+
+    <div class="row row-cols-1 row-cols-md-3 g-4 d-flex flex-wrap">
+      {% for item in data %}
+      <div class="col">
+        <div class="card" style="width: 20rem">
+          <div style="overflow: hidden; aspect-ratio: 1/1">
+            <img
+              src="{{ item.artistimg }}"
+              class="card-img-top"
+              style="width: 100%; height: 100%; object-fit: cover"
+              alt=""
+            />
+          </div>
+          <div class="card-body">
+            <h5 class="card-title" style="font-size: 30px">{{item.name}}</h5>
+            <p class="card-text">Artist</p>
+            <p class="card-text">{{ item.followers|format_number_with_commas }} listeners</p>
+            <a href="{% url 'artist' artistid=item.artistid %}" class="btn btn-primary">Explore</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>
+{% endblock content %}
